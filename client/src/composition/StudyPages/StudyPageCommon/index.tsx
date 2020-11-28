@@ -1,0 +1,2 @@
+import StudyPageCommonContainer from "./StudyPageCommonContainer"
+export default StudyPageCommonContainer
