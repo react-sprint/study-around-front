@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // import { IUseInput } from '../../hooks/useInput'; //커스텀 훅을 쓸 수 있을 듯.
 
 interface ISignupProps {
@@ -35,14 +35,20 @@ function SignupPresentation(props: ISignupProps) {
               {...passwordConfirmation}
               required
             />
+            <Button> 가입하기 </Button>
           </InputContainer>
-          <Button> 가입하기 </Button>
         </Form>
-        <Link to={'/signin'}> 로그인하기 </Link>
+        <Link to={'/signin'} style={{ textDecoration: 'none', color: 'red' }}>
+          로그인하기
+        </Link>
       </Layout>
     </Wrapper>
   );
 }
+
+const TempBorder = css`
+  border: 1px solid #ff6178;
+`;
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -57,10 +63,12 @@ const Layout = styled.div`
   min-width: 500px;
   min-height: 600px;
   background-color: white;
+  padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  ${TempBorder};
 
   // background-color: props => props.theme.colors.white;
   // border-radius: props => props.theme.borders.radius;
@@ -90,13 +98,18 @@ const Input = styled.input`
   & + & {
     margin-top: 1.25rem;
   }
+  & + button {
+    margin-top: 2rem;
+  }
 `;
 const Button = styled.button`
   all: unset;
   width: 100%;
   height: 40px;
   padding: 1rem;
-  background-color: blue;
-  // 좀더 둥글게
+
+  ${TempBorder};
+  background-color: ivory;
+  border-radius: 25px;
 `;
 export default SignupPresentation;
