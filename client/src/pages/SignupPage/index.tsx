@@ -1,5 +1,5 @@
-import SignupPresenter from './SignupPresenter';
+import SignupPresentation from './SignupPresentation';
 // import SignUpConatiner from 'composition/SignUp';
 
-export { SignupPresenter as default };
+export { SignupPresentation as default };
 // export default SignUpConatiner;

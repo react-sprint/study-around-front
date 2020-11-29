@@ -3,45 +3,43 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import { IUseInput } from '../../hooks/useInput'; //커스텀 훅을 쓸 수 있을 듯.
 
-interface ISignupProps {
+interface ISigninProps {
   // email: IUseInput;
   // password: IUseInput;
-  // passwordConfirmation: IUseInput; 
   email: string;
   password: string;
-  passwordConfirmation: string;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-function SignupPresenter(props: ISignupProps) {
-  const {email, password, passwordConfirmation, onSubmit} = props;
+function SigninPresentation(props: ISigninProps) {
+  const { email, password, onSubmit } = props;
 
   return (
-    <Wrapper> 
+    <Wrapper>
       <Layout>
         <h2> 당신의 습관이 되다. </h2>
         <Form method="post" onSubmit={onSubmit} encType="multipart/form-data">
           <InputContainer>
             <Input placeholder="이메일" name="email" {...email} required />
             <Input placeholder="비밀번호" name="password" {...password} required />
-            <Input placeholder="비밀번호 확인" name="passwordConfirmation" {...passwordConfirmation} required />
           </InputContainer>
-          <Button> 가입하기 </Button>
+          <Button> 로그인하기 </Button>
         </Form>
-        <Link to={"/signin"}> 로그인하기 </Link>
+        <Link to={'/signup'}> 가입하기 </Link>
       </Layout>
     </Wrapper>
   );
-    
+
 }
 
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
+  box-sizing: border-box;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 `;
 
 const Layout = styled.div`
@@ -52,7 +50,6 @@ const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
-
   // background-color: props => props.theme.colors.white;
   // border-radius: props => props.theme.borders.radius;
 `
@@ -62,11 +59,11 @@ const Form = styled.form`
 
 const InputContainer = styled.section`
   width: 100%;
+  margin-bottom: 2rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-bottom: 2rem;
 `;
 
 const Input = styled.input`
@@ -90,4 +87,4 @@ const Button = styled.button`
   background-color: blue;
   // 좀더 둥글게
 `;
-export default SignupPresenter;
+export default SigninPresentation;
