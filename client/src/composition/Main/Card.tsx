@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import LabelTag from '../../components/LabelTag';
+import palette from '../../styles/theme';
 
 type CardProps = {
   body: string;
@@ -71,8 +72,11 @@ const RightTextArea = styled.div`
 const PercentageArea = styled.div`
   padding-right: 3px;
   font-weight: 700;
-  color: rgb(255, 97, 120);
+  color: ${(props) => props.theme.rightRed};
 `;
+
+const textColor = `${palette.rightRed}`;
+const LabelColor = `${palette.red}`;
 
 function Card() {
   return (
@@ -83,8 +87,8 @@ function Card() {
           <LeftTextArea>
             <LabelTag
               text={'매니저'}
-              textColor="rgb(255, 97, 120)"
-              borderColor="red"
+              textColor={LabelColor}
+              borderColor={LabelColor}
             />
             <p>오승영</p>
           </LeftTextArea>
