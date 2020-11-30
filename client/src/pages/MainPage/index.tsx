@@ -1,8 +1,14 @@
 import React from 'react';
-import MainContainer from '../../composition/Main';
+import Header from '../../components/Header';
+import Main from '../../composition/Main';
 
 function MainPage() {
-  return <MainContainer />;
+  return (
+    <>
+      <Header />
+      <Main />;
+    </>
+  );
 }
 
 export default MainPage;
