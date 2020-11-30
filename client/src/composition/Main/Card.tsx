@@ -5,7 +5,7 @@ import palette from '../../styles/theme';
 
 const CardWrapper = styled.li`
   flex: none;
-  margin-top: 4vh;
+  margin-top: 2vh;
   height: 25vh;
   flex-basis: 50%;
   box-sizing: border-box;

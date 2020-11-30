@@ -8,37 +8,57 @@ const MainWrapper = styled.div`
   max-width: 720px;
   min-height: 90vh;
   margin: 0 auto;
+  div {
+    &.main-body {
+      width: 90%;
+    }
+  }
 `;
 
 const CardList = styled.ul`
   height: inherit;
   display: flex;
-  width: 90%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding-top: 10vh;
   align-content: flex-start;
+`;
+
+const CardTtile = styled.div`
+  position: relative;
+  width: 100%;
+  margin-top: 4vh;
+  font-size: 28px;
+  padding: 0 1vw;
+  color: ${(props) => props.theme.body};
+  font-family: sans-serif;
+  font-weight: 600;
 `;
 
 const TodayStudyInfos = StudyInfo.TodayStudyInfos;
 
-const Cards = TodayStudyInfos.map((info) => (
-  <Card
-    key={info.id}
-    title={info.title}
-    managerName={info.managerName}
-    successRatio={info.successRatio}
-    imgSrc={info.imgSrc}
-  />
-));
-
 function MainPresentation() {
+  const Cards = TodayStudyInfos.map((info) => (
+    <Card
+      key={info.id}
+      title={info.title}
+      managerName={info.managerName}
+      successRatio={info.successRatio}
+      imgSrc={info.imgSrc}
+    />
+  ));
+
   return (
     <>
       <MainWrapper>
-        <CardList>{Cards}</CardList>
-        <CardList>{Cards}</CardList>
+        <div className="main-body">
+          <CardTtile>상쾌한 아침 🍳</CardTtile>
+          <CardList>{Cards}</CardList>
+          <CardTtile>포근한 낮 🌳</CardTtile>
+          <CardList>{Cards}</CardList>
+          <CardTtile>소중한 밤 ☕️</CardTtile>
+          <CardList>{Cards}</CardList>
+        </div>
       </MainWrapper>
     </>
   );
