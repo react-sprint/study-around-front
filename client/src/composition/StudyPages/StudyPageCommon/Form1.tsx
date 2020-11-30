@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import ImageSeletor from './ImageSeletor'
 import TimeSelect from './TimeSelect'
 
 function Form1({setStep}) {
@@ -24,7 +25,14 @@ function Form1({setStep}) {
 
                 <FormArea>
                 <div className="formHeader">
-                <div className="title">3. 프로젝트 인증방법 📍</div>
+                <div className="title">3. 스터디 배경화면 🏞</div>
+                </div>
+                <ImageSeletor/>
+                </FormArea>
+
+                <FormArea>
+                <div className="formHeader">
+                <div className="title">4. 프로젝트 인증방법 📍</div>
                 <div className="letterNum">0/60자</div>
                 </div>
                 <FormTextArea placeholder="예) 댓글을 통해 출석하기" height="100px"></FormTextArea>
@@ -32,13 +40,13 @@ function Form1({setStep}) {
 
                         <FormArea>
                         <div className="formHeader">
-                        <div className="title">3. 프로젝트 인증시간 ⏱</div>
+                        <div className="title">5. 프로젝트 인증시간 ⏱</div>
                         </div>
                         <TimeSelect/>
                                 </FormArea>
         <FormArea>
 <div className="formHeader">
-<div className="title">4. 매니저 소개 👨‍🚀</div>
+<div className="title">6. 매니저 소개 👨‍🚀</div>
 <div className="letterNum">0/100자</div>
 </div>
 <FormTextArea placeholder="예) 매일 리엑트 공부를 통해 성장을 하고 싶어요!" height="100px"></FormTextArea>
