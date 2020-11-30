@@ -1,27 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
+import GithubBlock from './GithubBlock';
+import Menu from './Menu';
+
+const StickyArea = styled.div`
+  position: sticky;
+  z-index: 99;
+  top: 0px;
+`;
 
 const HeaderArea = styled.div`
-  position: sticky;
   margin: 0 auto;
   border-bottom: solid 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
-  height: 10vh;
-  top: 0px;
-  z-index: 99;
+  height: 100px;
+  margin-bottom: 5px;
 `;
 
 const LeftContainer = styled.div`
-  flex: 1 0 50px;
+  flex: 1 1 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 const RightContainer = styled.div`
-  flex: 1 0 50px;
+  flex: 1 1 50px;
 `;
 
 const CenterContainer = styled.div`
-  flex: 0 1 auto;
+  flex: 1 0 280px;
+  max-width: 720px;
 `;
 const TitleBlock = styled.div`
   flex: 0.8;
@@ -56,18 +66,23 @@ const TextArea = styled.div`
 
 function HeaderPresentation() {
   return (
-    <HeaderArea>
-      <LeftContainer></LeftContainer>
-      <CenterContainer>
-        <TextArea>
-          <SubTitleBlock>당신 곁의 스터디</SubTitleBlock>
-          <TitleBlock>
-            스터디 <b>어라운드</b>
-          </TitleBlock>
-        </TextArea>
-      </CenterContainer>
-      <RightContainer></RightContainer>
-    </HeaderArea>
+    <StickyArea>
+      <HeaderArea>
+        <LeftContainer>
+          <Menu />
+        </LeftContainer>
+        <CenterContainer>
+          <TextArea>
+            <SubTitleBlock>당신 곁의 스터디</SubTitleBlock>
+            <TitleBlock>
+              스터디 <b>어라운드</b>
+            </TitleBlock>
+          </TextArea>
+        </CenterContainer>
+        <RightContainer />
+      </HeaderArea>
+      <GithubBlock />
+    </StickyArea>
   );
 }
 
