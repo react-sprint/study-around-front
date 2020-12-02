@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LabelTag from '../../components/LabelTag';
+import LabelTag from '../../common/LabelTag';
 import palette from '../../styles/theme';
 
 const CardWrapper = styled.li`
@@ -27,6 +27,7 @@ const TopCradBlock = styled.div`
   position: relative;
   flex-basis: 75%;
 `;
+
 const ImageContainer = styled.div`
   background-image: url(${(props) => props.imgSrc});
   background-size: cover;
@@ -71,15 +72,17 @@ const BottomCardBock = styled.div`
 `;
 
 const LeftTextArea = styled.div`
+  font-size: 18px;
   margin-left: 20px;
   display: flex;
   align-items: center;
   p {
-    font-weight: 700;
+    font-weight: 600;
   }
 `;
 
 const RightTextArea = styled.div`
+  font-size: 17px;
   margin-right: 20px;
   display: flex;
   align-items: center;
@@ -117,6 +120,7 @@ function Card({ title, managerName, successRatio, imgSrc }: CardProps) {
               text={'매니저'}
               textColor={LabelColor}
               borderColor={LabelColor}
+              fontSize={'16px'}
             />
             <p>{managerName}</p>
           </LeftTextArea>
