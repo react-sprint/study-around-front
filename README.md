@@ -1,9 +1,7 @@
-<div align="center">
-  <h1>Study Around 👨🏻‍💻</h1>
-  <strong>An web app for study group management</strong>
-  	<h6>(under development)</h6>
-</div>
-<br/>
+# Study Around 👨🏻‍💻
+
+An web app for study group management
+
 
 
 ## Docs
@@ -16,6 +14,7 @@
 	</a>
 </div>
 <br/>
+
 
 
 ## Developers
@@ -58,3 +57,4 @@
       </td>
   </tr>
 </table>
+
