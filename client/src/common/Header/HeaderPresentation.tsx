@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import GithubBlock from './GithubBlock';
-import Menu from './Menu';
+import MenuButton from './MenuButton';
 
 const StickyArea = styled.div`
   position: sticky;
-  z-index: 99;
+  z-index: 3;
   top: 0px;
 `;
 
@@ -15,7 +15,7 @@ const HeaderArea = styled.div`
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
-  height: 100px;
+  height: 95px;
   margin-bottom: 5px;
 `;
 
@@ -69,7 +69,7 @@ function HeaderPresentation() {
     <StickyArea>
       <HeaderArea>
         <LeftContainer>
-          <Menu />
+          <MenuButton />
         </LeftContainer>
         <CenterContainer>
           <TextArea>

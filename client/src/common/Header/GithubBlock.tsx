@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../../components/Button';
+import Button from '../../common/Button';
 import { ReactComponent as GitIcon } from '../../styles/svg/github.svg';
 
 const CustomButton = styled(Button)`

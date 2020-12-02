@@ -2,11 +2,11 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button`
-  border-radius: 24px;
   background: transparent;
+  outline: none;
+  border-radius: 24px;
   align-items: center;
   text-align: left;
-  outline: none;
   width: auto;
   height: auto;
   border: none;
