@@ -1,2 +1,2 @@
-import StudyPageReadContainer from "../../../composition/StudyPages/StudyPageRead/StudyPageReadContainer"
-export default StudyPageReadContainer
+import StudyPageRead from '../../../composition/StudyPages/StudyPageRead';
+export default StudyPageRead;

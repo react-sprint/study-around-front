@@ -1,10 +1,8 @@
-import React from 'react'
-import StudyPageReadPresentation from './StudyPageReadPresentation'
+import React from 'react';
+import StudyPageReadPresentation from './StudyPageReadPresentation';
 
 function StudyPageReadContainer() {
-    return (
-        <StudyPageReadPresentation/>
-    )
+  return <StudyPageReadPresentation />;
 }
 
-export default StudyPageReadContainer
+export default StudyPageReadContainer;
