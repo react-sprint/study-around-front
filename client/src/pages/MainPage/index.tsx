@@ -1,7 +1,14 @@
 import React from 'react';
+import Header from '../../common/Header';
+import Main from '../../composition/Main';
 
-const MainPage = () => {
-  return <h1>MainPage</h1>;
-};
+function MainPage() {
+  return (
+    <>
+      <Header />
+      <Main />;
+    </>
+  );
+}
 
 export default MainPage;
