@@ -2,7 +2,11 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import TimeSelect from './TimeSelect';
 
-function Form1({ setStep }: any) {
+interface FormProps {
+  setStep: (number) => void;
+}
+
+function Form1({ setStep }: FormProps) {
   return (
     <Fragment>
       <Layout>

@@ -2,7 +2,11 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PassWordGenerator from './PassWordGenerator';
 
-function Form2({ setStep }: any) {
+interface FormProps {
+  setStep: (number) => void;
+}
+
+function Form2({ setStep }: FormProps) {
   return (
     <Fragment>
       <Layout>
