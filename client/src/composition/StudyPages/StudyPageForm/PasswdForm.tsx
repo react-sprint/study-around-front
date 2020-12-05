@@ -1,32 +1,25 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import PassWordGenerator from './PassWordGenerator';
 
-function Form3() {
+interface FormProps {
+  setStep: (number) => void;
+}
+
+function PasswdForm({ setStep }: FormProps) {
   return (
     <Fragment>
       <Layout>
-        <Title>
-          🎉 축하합니다 🎉
-          <br />
-          <br />
-          스터디 이름 스터디가 생성되었습니다.
-        </Title>
-        <StudyLink>https://study-around.com/la24lk1lk</StudyLink>
-        <SubmitButton>홈으로 가기</SubmitButton>
+        <Title>스터디룸 비밀번호를 설정해주세요</Title>
+        <PassWordGenerator />
+        <SubmitButton onClick={() => setStep(3)}>완료</SubmitButton>
       </Layout>
     </Fragment>
   );
 }
 
-export default Form3;
-const StudyLink = styled.div`
-  text-decoration: underline;
-  margin-top: 30px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #808080;
-`;
+export default PasswdForm;
+
 const SubmitButton = styled.div`
   cursor: pointer;
   margin-top: 100px;
@@ -42,12 +35,13 @@ const SubmitButton = styled.div`
   border-radius: 5px;
   border: none;
 `;
+
 const Title = styled.div`
-  text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  color: #000;
+  color: #737373;
 `;
+
 const Layout = styled.div`
   display: flex;
   justify-content: center;

@@ -6,7 +6,7 @@ interface FormProps {
   setStep: (number) => void;
 }
 
-function Form1({ setStep }: FormProps) {
+function CreateForm({ setStep }: FormProps) {
   return (
     <Fragment>
       <Layout>
@@ -65,7 +65,7 @@ function Form1({ setStep }: FormProps) {
   );
 }
 
-export default Form1;
+export default CreateForm;
 const SubmitButton = styled.div`
   cursor: pointer;
   display: flex;
