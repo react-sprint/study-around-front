@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-function TimeSelect(): JSX.Element {
+interface TimeSelectProps {
+  handleForm: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+function TimeSelect({ handleForm }: TimeSelectProps): JSX.Element {
   const get_loop_options = (
     startIndex: number,
     endIndex: number,
     offset: number
   ): JSX.Element[] => {
     const options: JSX.Element[] = [];
+
     for (startIndex; startIndex < endIndex; startIndex += offset) {
       options.push(
         <option value={startIndex} key={startIndex}>
@@ -17,6 +22,7 @@ function TimeSelect(): JSX.Element {
     }
     return options;
   };
+
   return (
     <Fragment>
       <Layout>
@@ -25,10 +31,21 @@ function TimeSelect(): JSX.Element {
         <option value="PM">PM</option>
         </SelectAPM>
         */}
-        <SelectTime>{get_loop_options(0, 24, 1)}</SelectTime>:
-        <SelectTime>{get_loop_options(0, 51, 10)}</SelectTime>~
-        <SelectTime>{get_loop_options(0, 24, 1)}</SelectTime>:
-        <SelectTime>{get_loop_options(0, 51, 10)}</SelectTime>
+        <SelectTime name="startHour" onChange={handleForm}>
+          {get_loop_options(0, 24, 1)}
+        </SelectTime>
+        :
+        <SelectTime name="startMinutes" onChange={handleForm}>
+          {get_loop_options(0, 51, 10)}
+        </SelectTime>
+        ~
+        <SelectTime name="endHour" onChange={handleForm}>
+          {get_loop_options(0, 24, 1)}
+        </SelectTime>
+        :
+        <SelectTime name="endMinutes" onChange={handleForm}>
+          {get_loop_options(0, 51, 10)}
+        </SelectTime>
       </Layout>
     </Fragment>
   );

@@ -3,19 +3,23 @@ import styled from 'styled-components';
 import TimeSelect from './TimeSelect';
 
 interface FormProps {
-  setStep: (number) => void;
+  handleForm: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSave: () => void;
+  formItemCount: (string) => number;
 }
 
-function CreateForm({ setStep }: FormProps) {
+function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
   return (
     <Fragment>
       <Layout>
         <FormArea>
           <div className="formHeader">
             <div className="title">1. 프로젝트 이름 ✏️</div>
-            <div className="letterNum">0/30자</div>
+            <div className="letterNum">{formItemCount('title')}/30자</div>
           </div>
           <FormTextArea
+            name="title"
+            onChange={handleForm}
             placeholder="예) 리액트 스터디"
             height="40px"
           ></FormTextArea>
@@ -23,9 +27,11 @@ function CreateForm({ setStep }: FormProps) {
         <FormArea>
           <div className="formHeader">
             <div className="title">2. 프로젝트 소개 📝</div>
-            <div className="letterNum">0/100자</div>
+            <div className="letterNum">{formItemCount('descStudy')}/100자</div>
           </div>
           <FormTextArea
+            name="descStudy"
+            onChange={handleForm}
             placeholder="예) 리액트 출석 스터디 입니다!"
             height="100px"
           ></FormTextArea>
@@ -34,9 +40,11 @@ function CreateForm({ setStep }: FormProps) {
         <FormArea>
           <div className="formHeader">
             <div className="title">3. 프로젝트 인증방법 📍</div>
-            <div className="letterNum">0/60자</div>
+            <div className="letterNum">{formItemCount('descAuth')}/60자</div>
           </div>
           <FormTextArea
+            name="descAuth"
+            onChange={handleForm}
             placeholder="예) 댓글을 통해 출석하기"
             height="100px"
           ></FormTextArea>
@@ -46,20 +54,30 @@ function CreateForm({ setStep }: FormProps) {
           <div className="formHeader">
             <div className="title">3. 프로젝트 인증시간 ⏱</div>
           </div>
-          <TimeSelect />
+          <TimeSelect handleForm={handleForm} />
         </FormArea>
         <FormArea>
           <div className="formHeader">
             <div className="title">4. 매니저 소개 👨‍🚀</div>
-            <div className="letterNum">0/100자</div>
+            <div className="letterNum">
+              {formItemCount('descManager')}/100자
+            </div>
           </div>
           <FormTextArea
+            name="descManager"
+            onChange={handleForm}
             placeholder="예) 매일 리엑트 공부를 통해 성장을 하고 싶어요!"
             height="100px"
           ></FormTextArea>
         </FormArea>
 
-        <SubmitButton onClick={() => setStep(2)}>생성하기</SubmitButton>
+        <SubmitButton
+          onClick={() => {
+            onSave();
+          }}
+        >
+          생성하기
+        </SubmitButton>
       </Layout>
     </Fragment>
   );
