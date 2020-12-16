@@ -5,6 +5,8 @@ import MainPage from './pages/MainPage';
 import StudyPageCreate from './pages/StudyPage/StudyPageCreate';
 import StudyPageRead from './pages/StudyPage/StudyPageRead';
 import StudyPageUpdate from './pages/StudyPage/StudyPageUpdate';
+import SignupPage from './pages/SignupPage';
+import SigninPage from './pages/SigninPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/study-create" component={StudyPageCreate} />
         <Route path="/study-read" component={StudyPageRead} />
         <Route path="/study-update" component={StudyPageUpdate} />
+        <Route path="/signup" component={SignupPage} />
+        <Route path="/signin" component={SigninPage} />
       </Switch>
     </BrowserRouter>
   );
