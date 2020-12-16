@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-
 interface SigninPresentationProps {
   email: string;
   password: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
-
 function SigninPresentation(props: SigninPresentationProps): JSX.Element {
   const { email, password, handleSubmit, onChange } = props;
   return (
@@ -66,7 +64,6 @@ const SubTitle = styled.div`
 const TempBorder = css`
   border: 1px solid #ff6178;
 `;
-
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
@@ -78,7 +75,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
 const Layout = styled.div`
   min-width: 380px;
   min-height: 600px;
@@ -94,17 +90,14 @@ const Layout = styled.div`
 const Form = styled.form`
   width: 100%;
 `;
-
 const InputContainer = styled.section`
   width: 100%;
   margin-top: 80px;
   margin-bottom: 2rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-
 const Input = styled.input`
   all: unset;
   box-sizing: border-box;
@@ -124,12 +117,10 @@ const Input = styled.input`
   & + & {
     margin-top: 1.25rem;
   }
-
   & + button {
     margin-top: 40px;
   }
 `;
-
 const Button = styled.button`
   all: unset;
   cursor: pointer;
@@ -145,5 +136,4 @@ const Button = styled.button`
   background-color: #fee500;
   border-radius: 4px;
 `;
-
 export default SigninPresentation;

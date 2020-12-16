@@ -15,26 +15,6 @@ function SignupContainer(): JSX.Element {
   const onSubmit = (email: string, password: string) => {
     const signUpForm = { email: email, password: password };
     dispatch(signUpRequest(signUpForm));
-    // if (password === passwordConfirmation) {
-    //   axios
-    //     .post('/users', {
-    //       email: email,
-    //       password: password,
-    //     })
-    //     .then((response) => {
-    //       console.log(response.data.message);
-    //       if (response.data.message === 'invalid email or password') {
-    //         alert('사용할 수 없는 아이디 혹은 패스워드입니다.');
-    //       } else {
-    //         history.push('/signin');
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // } else {
-    //   alert('패스워드가 일치하지 않습니다.');
-    // }
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
