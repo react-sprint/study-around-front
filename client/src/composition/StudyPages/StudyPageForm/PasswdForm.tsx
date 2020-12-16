@@ -1,18 +1,34 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import PassWordGenerator from './PassWordGenerator';
+import PasswdGenerator from './PasswdGenerator';
 
 interface FormProps {
   setStep: (number) => void;
+  onCreate: () => void;
+  onSavePasswd: () => void;
+  handdlePasswd: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function PasswdForm({ setStep }: FormProps) {
+function PasswdForm({
+  setStep,
+  onCreate,
+  onSavePasswd,
+  handdlePasswd,
+}: FormProps) {
   return (
     <Fragment>
       <Layout>
         <Title>스터디룸 비밀번호를 설정해주세요</Title>
-        <PassWordGenerator />
-        <SubmitButton onClick={() => setStep(3)}>완료</SubmitButton>
+        <PasswdGenerator handdlePasswd={handdlePasswd} />
+        <SubmitButton
+          onClick={() => {
+            onSavePasswd();
+            onCreate();
+            setStep(3);
+          }}
+        >
+          완료
+        </SubmitButton>
       </Layout>
     </Fragment>
   );

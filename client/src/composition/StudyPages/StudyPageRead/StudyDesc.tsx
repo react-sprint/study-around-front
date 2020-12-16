@@ -30,7 +30,7 @@ function StudyDesc() {
           프로젝트 종료 후 기대되는 변화
           <br />
           <br />
-          당신을 보는 누군가는 생각할 겁니다. "오.. 센스 장난없는데"
+          당신을 보는 누군가는 생각할 겁니다. &quot;오.. 센스 장난없는데&quot;
         </Article>
       </Layout>
     </Fragment>

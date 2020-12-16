@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import IfLeaderAndMoreThanOne from './DeleteModalComponents/IfLeaderAndMoreThanOne';
 import IfMember from './DeleteModalComponents/IfMember';
 
-function DeleteModal({ ModalOpen }) {
+function DeleteModal({ ModalOpen }: any) {
   return (
     <Fragment>
       <Layout ModalOpen={ModalOpen}>

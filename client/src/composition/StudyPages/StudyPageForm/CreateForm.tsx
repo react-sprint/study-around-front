@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import TimeSelect from './TimeSelect';
 
 interface FormProps {
-  handleForm: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSave: () => void;
+  handleForm: (key: string, value: string | number) => void;
+  onSaveInfo: () => void;
   formItemCount: (string) => number;
 }
 
-function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
+function CreateForm({ handleForm, onSaveInfo, formItemCount }: FormProps) {
   return (
     <Fragment>
       <Layout>
@@ -19,7 +19,9 @@ function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
           </div>
           <FormTextArea
             name="title"
-            onChange={handleForm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              handleForm(e.target.name, e.target.value);
+            }}
             placeholder="예) 리액트 스터디"
             height="40px"
           ></FormTextArea>
@@ -31,7 +33,9 @@ function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
           </div>
           <FormTextArea
             name="descStudy"
-            onChange={handleForm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              handleForm(e.target.name, e.target.value);
+            }}
             placeholder="예) 리액트 출석 스터디 입니다!"
             height="100px"
           ></FormTextArea>
@@ -44,7 +48,9 @@ function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
           </div>
           <FormTextArea
             name="descAuth"
-            onChange={handleForm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              handleForm(e.target.name, e.target.value);
+            }}
             placeholder="예) 댓글을 통해 출석하기"
             height="100px"
           ></FormTextArea>
@@ -65,7 +71,9 @@ function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
           </div>
           <FormTextArea
             name="descManager"
-            onChange={handleForm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              handleForm(e.target.name, e.target.value);
+            }}
             placeholder="예) 매일 리엑트 공부를 통해 성장을 하고 싶어요!"
             height="100px"
           ></FormTextArea>
@@ -73,7 +81,7 @@ function CreateForm({ handleForm, onSave, formItemCount }: FormProps) {
 
         <SubmitButton
           onClick={() => {
-            onSave();
+            onSaveInfo();
           }}
         >
           생성하기
@@ -134,6 +142,7 @@ const FormArea = styled.div`
     }
   }
 `;
+
 const Layout = styled.div`
   display: flex;
   justify-content: center;

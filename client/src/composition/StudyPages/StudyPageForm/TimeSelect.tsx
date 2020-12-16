@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 interface TimeSelectProps {
-  handleForm: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleForm: (key: string, value: string | number) => void;
 }
 
 function TimeSelect({ handleForm }: TimeSelectProps): JSX.Element {
@@ -31,19 +31,47 @@ function TimeSelect({ handleForm }: TimeSelectProps): JSX.Element {
         <option value="PM">PM</option>
         </SelectAPM>
         */}
-        <SelectTime name="startHour" onChange={handleForm}>
+        <SelectTime
+          name="startHour"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const key = e.target.name;
+            const value = Number(e.target.value);
+            handleForm(key, value);
+          }}
+        >
           {get_loop_options(0, 24, 1)}
         </SelectTime>
         :
-        <SelectTime name="startMinutes" onChange={handleForm}>
+        <SelectTime
+          name="startMinutes"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const key = e.target.name;
+            const value = Number(e.target.value);
+            handleForm(key, value);
+          }}
+        >
           {get_loop_options(0, 51, 10)}
         </SelectTime>
         ~
-        <SelectTime name="endHour" onChange={handleForm}>
+        <SelectTime
+          name="endHour"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const key = e.target.name;
+            const value = Number(e.target.value);
+            handleForm(key, value);
+          }}
+        >
           {get_loop_options(0, 24, 1)}
         </SelectTime>
         :
-        <SelectTime name="endMinutes" onChange={handleForm}>
+        <SelectTime
+          name="endMinutes"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const key = e.target.name;
+            const value = Number(e.target.value);
+            handleForm(key, value);
+          }}
+        >
           {get_loop_options(0, 51, 10)}
         </SelectTime>
       </Layout>
