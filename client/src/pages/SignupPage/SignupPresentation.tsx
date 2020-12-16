@@ -18,7 +18,7 @@ function SignupPresentation(props: SignupPresentationProps): JSX.Element {
     handleSubmit,
     onChange,
   } = props;
-
+  //
   return (
     <Wrapper>
       <Title>Study-Åround</Title>
