@@ -1,51 +1,83 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-// import { IUseInput } from '../../hooks/useInput'; //커스텀 훅을 쓸 수 있을 듯.
 
-interface ISignupProps {
-  // email: IUseInput;
-  // password: IUseInput;
-  // passwordConfirmation: IUseInput;
+interface SignupPresentationProps {
   email: string;
   password: string;
   passwordConfirmation: string;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-function SignupPresentation(props: ISignupProps) {
-  const { email, password, passwordConfirmation, onSubmit } = props;
+function SignupPresentation(props: SignupPresentationProps): JSX.Element {
+  const {
+    email,
+    password,
+    passwordConfirmation,
+    handleSubmit,
+    onChange,
+  } = props;
 
   return (
     <Wrapper>
+      <Title>Study-Åround</Title>
       <Layout>
-        <h2> 당신의 습관이 되다. </h2>
-        <Form method="post" onSubmit={onSubmit} encType="multipart/form-data">
+        <Form onSubmit={handleSubmit}>
           <InputContainer>
-            <Input placeholder="이메일" name="email" {...email} required />
+            <InputTitle>계정 이메일</InputTitle>
             <Input
-              placeholder="비밀번호"
+              placeholder="이메일"
+              name="email"
+              value={email}
+              onChange={onChange}
+              type="email"
+              required
+            />
+            <InputTitle style={{ marginTop: '40px' }}>비밀번호</InputTitle>
+            <Input
+              placeholder="비밀번호(8~32자리)"
               name="password"
-              {...password}
+              value={password}
+              onChange={onChange}
+              type="password"
               required
             />
             <Input
-              placeholder="비밀번호 확인"
+              placeholder="비밀번호 재입력"
               name="passwordConfirmation"
-              {...passwordConfirmation}
+              value={passwordConfirmation}
+              onChange={onChange}
+              type="password"
               required
             />
-            <Button> 가입하기 </Button>
+            <Button type="submit">가입하기</Button>
           </InputContainer>
         </Form>
-        <Link to={'/signin'} style={{ textDecoration: 'none', color: 'red' }}>
+        {/* <Link to={'/signin'} style={{ textDecoration: 'none', color: 'red' }}>
           로그인하기
-        </Link>
+        </Link> */}
       </Layout>
     </Wrapper>
   );
 }
-
+const InputTitle = styled.div`
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  color: #000;
+  font-weight: normal;
+`;
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 30px;
+`;
 const TempBorder = css`
   border: 1px solid #ff6178;
 `;
@@ -55,21 +87,23 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 `;
 
 const Layout = styled.div`
-  min-width: 500px;
+  min-width: 580px;
   min-height: 600px;
   background-color: white;
-  padding: 1.5rem;
+  padding: 58px 69px 139px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${TempBorder};
-
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  box-sizing: border-box;
   // background-color: props => props.theme.colors.white;
   // border-radius: props => props.theme.borders.radius;
 `;
@@ -90,26 +124,39 @@ const Input = styled.input`
   all: unset;
   box-sizing: border-box;
   width: 100%;
-  height: 40px;
-
-  padding: 1rem;
+  height: 47px;
+  border-bottom: 2px lightgray solid;
+  padding: 1rem 0px;
   transition: border-color 0.5s ease-in-out;
-
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  &::placeholder {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 15px;
+  }
   & + & {
     margin-top: 1.25rem;
   }
+
   & + button {
-    margin-top: 2rem;
+    margin-top: 100px;
   }
 `;
 const Button = styled.button`
   all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #191919;
+  box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: 50px;
   padding: 1rem;
-
-  ${TempBorder};
-  background-color: ivory;
-  border-radius: 25px;
+  background-color: #fee500;
+  border-radius: 4px;
 `;
 export default SignupPresentation;
