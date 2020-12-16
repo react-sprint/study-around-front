@@ -14,3 +14,4 @@ function* signUpFuncSaga(action: ReturnType<typeof signUpRequest>) {
 export function* signUpSaga() {
   yield takeEvery('SIGNUP_REQUEST', signUpFuncSaga);
 }
+//

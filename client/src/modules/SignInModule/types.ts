@@ -1,9 +1,9 @@
 import * as actions from './actions';
 
 export type LoginAction =
-  | ReturnType<typeof actions.signUpRequest>
-  | ReturnType<typeof actions.signUpSuccess>
-  | ReturnType<typeof actions.signUpError>;
+  | ReturnType<typeof actions.loginRequest>
+  | ReturnType<typeof actions.loginSuccess>
+  | ReturnType<typeof actions.loginError>;
 export type LoginState = {
   loginStatus: {
     loading: boolean;
@@ -11,4 +11,3 @@ export type LoginState = {
     error: Error | null;
   };
 };
-//
