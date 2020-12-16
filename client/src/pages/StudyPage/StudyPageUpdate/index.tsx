@@ -1,2 +1,2 @@
-import StudyPageUpdateContainer from "../../../composition/StudyPages/StudyPageUpdate/StudyPageUpdateContainer"
-export default StudyPageUpdateContainer
+import StudyPageUpdate from '../../../composition/StudyPages/StudyPageForm/StudyPageUpdate';
+export default StudyPageUpdate;

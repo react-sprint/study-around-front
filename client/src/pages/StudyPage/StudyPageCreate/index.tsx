@@ -1,2 +1,2 @@
-import StudyPageCreateContainer from "../../../composition/StudyPages/StudyPageCreate/StudyPageCreateContainer"
-export default StudyPageCreateContainer
+import StudyPageCreate from '../../../composition/StudyPages/StudyPageForm/StudyPageCreate';
+export default StudyPageCreate;
