@@ -3,6 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import { signUpApi } from './api';
 import history from '../history';
 function* signUpFuncSaga(action: ReturnType<typeof signUpRequest>) {
+  console.log('test');
   try {
     const signUpData = yield call(signUpApi, action.payload);
     yield put(signUpSuccess(signUpData));
@@ -12,7 +13,5 @@ function* signUpFuncSaga(action: ReturnType<typeof signUpRequest>) {
   }
 }
 export function* signUpSaga() {
-  yield takeEvery('SIGNUP_REQUEST', signUpFuncSaga);
+  yield takeEvery('signup/SignUp_REQUEST', signUpFuncSaga);
 }
-//
-//

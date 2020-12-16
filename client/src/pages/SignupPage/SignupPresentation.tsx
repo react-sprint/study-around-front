@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled, { css } from '../SigninPage/node_modules/styled-components';
+import styled, { css } from 'styled-components';
 interface SignupPresentationProps {
   email: string;
   password: string;

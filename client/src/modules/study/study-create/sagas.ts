@@ -13,5 +13,5 @@ function* createStudyFuncSaga(action: ReturnType<typeof actions.createStudy>) {
   }
 }
 export function* createStudySaga() {
-  yield takeEvery('CREATE_STUDY', createStudyFuncSaga);
+  yield takeEvery(actions.CREATE_STUDY, createStudyFuncSaga);
 }
