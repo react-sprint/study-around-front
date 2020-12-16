@@ -6,13 +6,15 @@ export interface StudyForm {
   descStudy: string;
   descAuth: string;
   descManager: string;
-  startHour: string;
-  startMinutes: string;
-  endHour: string;
-  endMinutes: string;
+  startHour: number;
+  startMinutes: number;
+  endHour: number;
+  endMinutes: number;
+  studyPassword?: number;
 }
 
 // 모든 액션 객체들에 대한 타입 준비
 export type StudyAction =
   | ReturnType<typeof actions.initializeStudyForm>
-  | ReturnType<typeof actions.saveStudyForm>;
+  | ReturnType<typeof actions.saveStudyInfo>
+  | ReturnType<typeof actions.saveStudyPassword>;

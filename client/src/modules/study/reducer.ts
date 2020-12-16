@@ -7,10 +7,11 @@ const initialStudyForm: types.StudyForm = {
   descStudy: '',
   descAuth: '',
   descManager: '',
-  startHour: '',
-  startMinutes: '',
-  endHour: '',
-  endMinutes: '',
+  startHour: 0,
+  startMinutes: 0,
+  endHour: 0,
+  endMinutes: 0,
+  studyPassword: 0,
 };
 
 // 리듀서 작성
@@ -19,10 +20,15 @@ function study(
   action: types.StudyAction
 ): types.StudyForm {
   switch (action.type) {
-    case actions.SAVE_STUDY_FORM:
+    case actions.SAVE_STUDY_INFO:
       return {
         ...state,
         ...action.payload,
+      };
+    case actions.SAVE_STUDY_PASSWORD:
+      return {
+        ...state,
+        studyPassword: action.studyPassword,
       };
     case actions.INITIALIZE_STUDY_FORM:
       return initialStudyForm;
