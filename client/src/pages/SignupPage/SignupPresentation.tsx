@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled, { css } from 'styled-components';
-
+import styled, { css } from '../SigninPage/node_modules/styled-components';
 interface SignupPresentationProps {
   email: string;
   password: string;
@@ -9,7 +8,6 @@ interface SignupPresentationProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
-
 function SignupPresentation(props: SignupPresentationProps): JSX.Element {
   const {
     email,
@@ -18,6 +16,7 @@ function SignupPresentation(props: SignupPresentationProps): JSX.Element {
     handleSubmit,
     onChange,
   } = props;
+
   //
   return (
     <Wrapper>
@@ -81,7 +80,6 @@ const Title = styled.div`
 const TempBorder = css`
   border: 1px solid #ff6178;
 `;
-
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
@@ -91,13 +89,11 @@ const Wrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
 `;
-
 const Layout = styled.div`
   min-width: 580px;
   min-height: 600px;
   background-color: white;
   padding: 58px 69px 139px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,16 +106,13 @@ const Layout = styled.div`
 const Form = styled.form`
   width: 100%;
 `;
-
 const InputContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-bottom: 2rem;
 `;
-
 const Input = styled.input`
   all: unset;
   box-sizing: border-box;
@@ -139,7 +132,6 @@ const Input = styled.input`
   & + & {
     margin-top: 1.25rem;
   }
-
   & + button {
     margin-top: 100px;
   }
