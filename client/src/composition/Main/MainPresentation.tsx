@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '../Main/Card';
 import styled from 'styled-components';
 import { StudyInfo } from '../../constants/mocks';
@@ -37,7 +37,15 @@ const CardTtile = styled.div`
 
 const TodayStudyInfos = StudyInfo.TodayStudyInfos;
 
-function MainPresentation() {
+function MainPresentation(props: any) {
+  const { projects } = props;
+  console.log('MainPresentation projects', projects);
+  useEffect(() => {
+    // console.log(projects?.projectsStatus?.data);
+    if (projects?.projectsStatus.data.length === 0) {
+      alert('불러올 스터디가 없습니다.');
+    }
+  }, []);
   const Cards = TodayStudyInfos.map((info) => (
     <Card
       key={info.id}

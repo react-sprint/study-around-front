@@ -12,6 +12,7 @@ export const loginRequest = (form) => {
 };
 
 export const loginSuccess = (loginData: loginApiProps) => {
+  console.log('loginSuccess action', loginData);
   window.localStorage.setItem('token', loginData['JWT token']);
   return {
     type: 'LOGIN_SUCCESS',

@@ -34,7 +34,7 @@ function SigninPresentation(props: SigninPresentationProps): JSX.Element {
               type="password"
               required
             />
-            <Button> 로그인하기 </Button>
+            <Button type="submit"> 로그인하기 </Button>
           </InputContainer>
         </Form>
         <LinkBtn to={'/signup'}>회원가입</LinkBtn>

@@ -5,8 +5,9 @@ import history from '../history';
 function* signUpFuncSaga(action: ReturnType<typeof signUpRequest>) {
   try {
     const signUpData = yield call(signUpApi, action.payload);
+    console.log('signUpData in saga', signUpData);
     yield put(signUpSuccess(signUpData));
-    yield call([history, history.push], '/signin');
+    yield call([history, history.push], '/signin'); // 임시
   } catch (e) {
     yield put(signUpError(e));
   }

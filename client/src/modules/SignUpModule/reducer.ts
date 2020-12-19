@@ -1,4 +1,5 @@
-const login = (state = {}, action) => {
+const signUp = (state = {}, action) => {
+  console.log('signUp reducer', state, action);
   switch (action.type) {
     case 'SIGNUP_REQUEST':
       return {
@@ -20,6 +21,6 @@ const login = (state = {}, action) => {
   }
 };
 
-export default login;
+export default signUp;
 //
 //

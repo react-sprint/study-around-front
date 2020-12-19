@@ -5,8 +5,9 @@ import history from '../history';
 function* loginFuncSaga(action: ReturnType<typeof loginRequest>) {
   try {
     const loginData = yield call(loginApi, action.payload);
+    console.log('loginData (signInData) in saga', loginData);
     yield put(loginSuccess(loginData));
-    yield call([history, history.push], '/');
+    // yield call([history, history.push], '/'); // 암시 메인으로 돌아가도록
   } catch (e) {
     yield put(loginError(e));
   }
