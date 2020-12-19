@@ -3,12 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './reducers';
+// 임시 시작
+// import rootReducer from './reducers';
+import rootReducer, { rootSaga } from './modules';
+import createSagaMiddleware from 'redux-saga';
+import logger from 'redux-logger';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(
+      // ReduxThunk.withExtraArgument({ history: customHistory }),
+      sagaMiddleware,
+      logger
+    )
+  )
+);
+
+sagaMiddleware.run(rootSaga); // 루트 사가를 실행해줍니다.
 
 ReactDOM.render(
   <Provider store={store}>

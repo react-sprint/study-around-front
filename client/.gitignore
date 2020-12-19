@@ -24,3 +24,5 @@ yarn-error.log*
 
 # lint
 .eslintcache
+# vscode
+/.vscode
